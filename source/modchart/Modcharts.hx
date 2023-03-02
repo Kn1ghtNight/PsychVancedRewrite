@@ -13,7 +13,7 @@ class Modcharts {
         }
     }
 
-    static var songs = ["endless"];
+    static var songs = ["endless", "milf"];
 	public static function isModcharted(songName:String){
 		if (songs.contains(songName.toLowerCase()))
             return true;
@@ -26,6 +26,37 @@ class Modcharts {
     
     public static function loadModchart(modManager:ModManager, songName:String){
         switch (songName.toLowerCase()){
+            case 'milf'://modchart example teehee
+                modManager.queueSetP(671, "beat", 100);
+                modManager.queueSetP(800, "beat", 0);
+            case 'maelstrom': //it feels like mal is coming inside of me!
+                modManager.queueEase(127, 136, 'transformX', 50, 'circOut');
+                modManager.queueEase(143, 152, 'transformX', -50, 'circOut');
+                modManager.queueEase(160, 169, 'transformX', 50, 'circOut');
+                modManager.queueEase(175, 184, 'transformX', -50, 'circOut');
+                //this code is a menace to society :mischief:
+                modManager.queueEase(192, 201, 'transformX', 50, 'circOut');
+                modManager.queueEase(208, 217, 'transformX', -50, 'circOut');
+                modManager.queueEase(224, 233, 'transformX', 50, 'circOut');
+                modManager.queueEase(240, 249, 'transformX', -50, 'circOut');
+
+                modManager.queueSetP(127, 'tipsy', -100);
+                modManager.queueEaseP(127, 136, 'tipsy', 0, 'cubeOut');
+                modManager.queueSetP(143, 'tipsy', 100);
+                modManager.queueEaseP(143, 152, 'tipsy', 0, 'cubeOut');
+                modManager.queueSetP(160, 'tipsy', -100);
+                modManager.queueEaseP(160, 169, 'tipsy', 0, 'cubeOut');
+                modManager.queueSetP(175, 'tipsy', -100);
+                modManager.queueEaseP(175, 184, 'tipsy', 0, 'cubeOut');
+
+                modManager.queueSetP(192, 'tipsy', -100);
+                modManager.queueEaseP(192, 201, 'tipsy', 0, 'cubeOut');
+                modManager.queueSetP(208, 'tipsy', -100);
+                modManager.queueEaseP(208, 217, 'tipsy', 0, 'cubeOut');
+                modManager.queueSetP(224, 'tipsy', 100);
+                modManager.queueEaseP(224, 233, 'tipsy', 0, 'cubeOut');
+                modManager.queueSetP(240, 'tipsy', -100);
+                modManager.queueEaseP(240, 249, 'tipsy', 0, 'cubeOut');
             case 'endless':
 
                 modManager.setPercent('tipZOffset', 100);
