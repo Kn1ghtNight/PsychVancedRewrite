@@ -81,7 +81,6 @@ class FPS extends TextField
 		text += 'Current BPM: ${Conductor.bpm}' + "\n";
         text += 'Current state: ${Type.getClassName(Type.getClass(FlxG.state))}' + "\n";
 		text += 'Nb Cameras: ${FlxG.cameras.list.length}' + "\n";
-		text += 'System: ${lime.system.System.platformLabel} ${lime.system.System.platformVersion}' + "\n";
         text += 'Objs in State: ${FlxG.state.members.length}' + "\n";
 	}
 

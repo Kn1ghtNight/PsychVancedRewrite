@@ -29,7 +29,7 @@ using StringTools;
 
 class OptionsState extends MusicBeatState
 {
-	var options:Array<String> = ['Note Colors', 'Controls', 'Adjust Delay and Combo', 'Graphics', 'Visuals and UI', 'Gameplay'];
+	var options:Array<String> = ['Note Colors', 'Controls', 'Graphics', 'Visuals and UI', 'Gameplay'];
 	private var grpOptions:FlxTypedGroup<Alphabet>;
 	private static var curSelected:Int = 0;
 	public static var menuBG:FlxSprite;
@@ -46,13 +46,13 @@ class OptionsState extends MusicBeatState
 				openSubState(new options.VisualsUISubState());
 			case 'Gameplay':
 				openSubState(new options.GameplaySettingsSubState());
-			case 'Adjust Delay and Combo':
-				LoadingState.loadAndSwitchState(new options.NoteOffsetState());
 		}
 	}
 
 	var selectorLeft:Alphabet;
 	var selectorRight:Alphabet;
+
+	public static var goBackPause:Bool = false;
 
 	override function create() {
 		#if desktop
@@ -106,7 +106,7 @@ class OptionsState extends MusicBeatState
 
 		if (controls.BACK) {
 			FlxG.sound.play(Paths.sound('cancelMenu'));
-			MusicBeatState.switchState(new MainMenuState());
+			if(goBackPause) { MusicBeatState.switchState(new PlayState()); FlxG.sound.music.fadeOut(.5,0); goBackPause = false; } else MusicBeatState.switchState(new MainMenuState());
 		}
 
 		if (controls.ACCEPT) {

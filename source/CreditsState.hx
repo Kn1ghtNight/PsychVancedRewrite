@@ -46,6 +46,7 @@ class CreditsState extends MusicBeatState
 
 		persistentUpdate = true;
 		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+		bg.scale.set(1.7, 1.7);
 		add(bg);
 		bg.screenCenter();
 		
@@ -114,7 +115,8 @@ class CreditsState extends MusicBeatState
 		{
 			var isSelectable:Bool = !unselectableCheck(i);
 			var optionText:Alphabet = new Alphabet(FlxG.width / 2, 300, creditsStuff[i][0], !isSelectable);
-			optionText.isMenuItem = true;
+			optionText.isMenuItem = false;
+			optionText.itemType = "Classic";
 			optionText.targetY = i;
 			optionText.changeX = false;
 			optionText.snapToPosition();
@@ -137,7 +139,6 @@ class CreditsState extends MusicBeatState
 
 				if(curSelected == -1) curSelected = i;
 			}
-			else optionText.alignment = CENTERED;
 		}
 		
 		descBox = new AttachedSprite();

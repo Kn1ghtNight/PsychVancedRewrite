@@ -14,6 +14,7 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.FlxCamera;
 import flixel.util.FlxStringUtil;
+import options.OptionsState;
 
 class PauseSubState extends MusicBeatSubstate
 {
@@ -220,6 +221,7 @@ class PauseSubState extends MusicBeatSubstate
 					regenMenu();
 				case "Options":
 					MusicBeatState.switchState(new OptionsState());
+					OptionsState.goBackPause = true;
 				case 'Toggle Practice Mode':
 					PlayState.instance.practiceMode = !PlayState.instance.practiceMode;
 					PlayState.changedDifficulty = true;

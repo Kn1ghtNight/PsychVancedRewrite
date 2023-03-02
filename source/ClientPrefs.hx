@@ -53,8 +53,7 @@ class ClientPrefs {
 		'botplay' => false,
 		'opponentplay' => false
 	];
-
-	public static var comboOffset:Array<Int> = [0, 0, 0, 0];
+	
 	public static var ratingOffset:Int = 0;
 	public static var sickWindow:Int = 45;
 	public static var goodWindow:Int = 90;
@@ -115,7 +114,6 @@ class ClientPrefs {
 		FlxG.save.data.scoreZoom = scoreZoom;
 		FlxG.save.data.noReset = noReset;
 		FlxG.save.data.healthBarAlpha = healthBarAlpha;
-		FlxG.save.data.comboOffset = comboOffset;
 		FlxG.save.data.achievementsMap = Achievements.achievementsMap;
 		FlxG.save.data.henchmenDeath = Achievements.henchmenDeath;
 
@@ -213,11 +211,7 @@ class ClientPrefs {
 		}
 		if(FlxG.save.data.healthBarAlpha != null) {
 			healthBarAlpha = FlxG.save.data.healthBarAlpha;
-		}
-		if(FlxG.save.data.comboOffset != null) {
-			comboOffset = FlxG.save.data.comboOffset;
-		}
-		
+		}	
 		if(FlxG.save.data.ratingOffset != null) {
 			ratingOffset = FlxG.save.data.ratingOffset;
 		}
